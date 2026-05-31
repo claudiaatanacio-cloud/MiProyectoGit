@@ -1,0 +1,22 @@
+name: Verificacion de Codigo
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clonar el repositorio actual
+      uses: actions/checkout@v4
+
+    - name: Ejecutar script de verificación de archivos
+      run: |
+        echo "Iniciando verificación del entorno..."
+        ls -la
+        echo "¡El repositorio se ha verificado exitosamente en GitHub Actions!"
+
